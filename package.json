@@ -1,0 +1,19 @@
+{
+  "name": "umi-plugin-ba",
+  "version": "1.0.0",
+  "description": "Baidu Analytics for umi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "umi",
+    "Baidu",
+    "Analytics",
+    "ba",
+    "analytics",
+    "baidu"
+  ],
+  "author": "xsmarter",
+  "license": "ISC"
+}
