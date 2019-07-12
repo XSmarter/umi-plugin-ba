@@ -8,17 +8,12 @@ export default (api, opts) => {
   api.log.success("insert baidu analytics");
   const baTpl = function(code) {
     return `
-    (function(){ 
-      if (!location.port) {
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?${code}";
-          hm.async = 1;
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-      }
-    })();
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?${code}";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
   `;
   };
   api.addHTMLHeadScript({
