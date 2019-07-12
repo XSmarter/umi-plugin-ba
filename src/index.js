@@ -10,7 +10,6 @@ export default (api, opts) => {
     return `
     (function(){ 
       if (!location.port) {
-        var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
           hm.src = "https://hm.baidu.com/hm.js?${code}";
@@ -18,11 +17,13 @@ export default (api, opts) => {
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();
-        var ba = _hmt;
       }
     })();
   `;
   };
+  api.addHTMLHeadScript({
+    content: 'var _hmt = _hmt || [];'
+  });
   api.addHTMLScript({
     content: baTpl(opts.code)
   });
