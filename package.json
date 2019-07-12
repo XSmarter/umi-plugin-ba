@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-ba",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Baidu Analytics for umi",
   "main": "index.js",
   "scripts": {
