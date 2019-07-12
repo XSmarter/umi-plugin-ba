@@ -8,6 +8,7 @@ export default (api, opts) => {
   api.log.success("insert baidu analytics");
   const baTpl = function(code) {
     return `
+      var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?${code}";
@@ -17,9 +18,6 @@ export default (api, opts) => {
   `;
   };
   api.addHTMLHeadScript({
-    content: 'var _hmt = _hmt || [];'
-  });
-  api.addHTMLScript({
     content: baTpl(opts.code)
   });
 };
