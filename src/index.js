@@ -10,18 +10,15 @@ export default (api, opts) => {
     return `
     (function(){ 
       if (!location.port) {
-        (function (i, s, o, g, r, a, m) {
-          i['BaiduAnalyticsObject'] = r;
-          i[r] = i[r] || function () {
-              (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-          a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-          a.async = 1;
-          a.src = g;
-          m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//hm.baidu.com/hm.js?${code}', 'ba');
-        ba = ba || [];
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?${code}";
+          hm.async = 1;
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        var ba = _hmt;
       }
     })();
   `;
